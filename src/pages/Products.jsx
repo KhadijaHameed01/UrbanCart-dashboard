@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import ProjectItem from '../Components/ProjectItem';
 
@@ -29,64 +29,59 @@ const [sortType, setSortType] = useState('relevant');
   }
   }
 
-  const applyFilter = () => {
-        if (!Array.isArray(Products) || Products.length === 0) return;
-        let productsCopy = Products.slice();
-        if (showSearch && search) {
-          productsCopy = Products.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
-        }
-        
-     if (category.length > 0) {
-        productsCopy = productsCopy.filter(item => {
-            return category.includes(item.category);
-        });
-    }
+ 
+  const applyFilter = useCallback(() => {
+    if (!Array.isArray(Products) || Products.length === 0) return;
     
+    let productsCopy = [...Products]; // Ensure you're working with a fresh copy
+  
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+    }
+  
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter(item => category.includes(item.category));
+    }
+  
     if (subCategory.length > 0) {
-        productsCopy = productsCopy.filter(item => {
-            return subCategory.includes(item.subCategory);
-        });
+      productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory));
     }
-    
-    setFilterProducts(productsCopy)
   
-}
-const sortProducts = () => {
-  // Create a fresh copy of the products array to avoid mutation
-  let sortingProducts = [...filterProducts];
-
-  switch (sortType) {
-    case 'low-high':
-      // Ascending order: Lowest price first
-      sortingProducts.sort((a, b) => (a.price-b.price));
-      break;
-
-    case 'high-low':
-      // Descending order: Highest price first
-      sortingProducts.sort((a, b) => (b.price-a.price));
-      break;
-
-    default:
-      applyFilter(); 
-      return; 
-  }
-
+    setFilterProducts(productsCopy);
+  }, [Products, category, subCategory, search, showSearch]);  // Added all dependencies
   
-  setFilterProducts(sortingProducts); 
-};
+  const sortProducts = useCallback(() => {
+    let sortingProducts = [...filterProducts]; 
+  
+    switch (sortType) {
+      case 'low-high':
+        sortingProducts.sort((a, b) => a.price - b.price);
+        break;
+      case 'high-low':
+        sortingProducts.sort((a, b) => b.price - a.price);
+        break;
+      default:
+        return;
+    }
+  
+    setFilterProducts(sortingProducts);
+  }, [filterProducts, sortType]); // Added dependencies
+  
 
   useEffect(() => {
     setFilterProducts(Products);
   }, [Products]);
+  
 
-  useEffect(()=>{
-  applyFilter() 
-  },[category,subCategory,search,showSearch])
+  useEffect(() => {
+    applyFilter();
+  }, [applyFilter]);
+  
 
   useEffect(() => {
     sortProducts();
-}, [sortType]);
-
+  }, [sortProducts]);
+  
   return (
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 pt-10 border-t border-gray-300 w-[100%] ml-3 bg-white mt-2">
         {/* Filters section */}
