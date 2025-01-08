@@ -4,6 +4,7 @@ import { IoLogoInstagram } from "react-icons/io";
 import { LuTwitter } from "react-icons/lu";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPinterestP } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
 
 export default function Footer() {
   return (
@@ -12,19 +13,19 @@ export default function Footer() {
       <div className="footer-icons-container">
         <ul className="footer-icons-list">
           <li className="footer-icons">
-            <a href="#"><TbBrandFacebook /></a>
+            <a href="https://www.facebook.com/profile.php?id=61555998413259"><TbBrandFacebook /></a>
           </li>
           <li className="footer-icons">
-            <a href="#"><IoLogoInstagram /></a>
+            <a href="https://www.instagram.com/"><IoLogoInstagram /></a>
           </li>
           <li className="footer-icons">
-            <a href="#"><LuTwitter /></a>
+            <a href="https://www.instagram.com/"><BsTwitterX /></a>
           </li>
           <li className="footer-icons">
-            <a href="#"><AiOutlineYoutube /></a>
+            <a href="https://www.youtube.com/"><AiOutlineYoutube /></a>
           </li>
           <li className="footer-icons">
-            <a href="#"><FaPinterestP /></a>
+            <a href="https://www.pinterest.com/"><FaPinterestP /></a>
           </li>
         </ul>
       </div>
