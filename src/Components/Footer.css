@@ -1,0 +1,129 @@
+.footer {
+    width: 100%;
+    background-color: #f3d7c6f5;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Social Media Icons */
+.footer-icons-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-icons-list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: background-color 0.5s ease, font-size 0.2s ease;
+}
+
+.footer-icons a:hover {
+    background-color: #ff5e14;
+    color: white;
+    font-size: 26px;
+}
+
+/* Email Subscription Box */
+.footer-input-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 90%;
+    max-width: 500px; /* Increased max width for larger screens */
+    background-color: #fcc5a2f5;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-input-box input {
+    flex: 1; /* Makes the input take up available space */
+    max-width: 400px; /* Allows for wider input boxes */
+    height: 50px;
+    padding: 0 10px;
+    border: 2px solid #ff5e14;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-input-box input:focus {
+    border-color: #ff8e42;
+    box-shadow: 0px 0px 8px rgba(255, 94, 20, 0.4);
+}
+
+.footer-input-box button {
+    width: 140px;
+    height: 50px;
+    color: #333;
+    background-color: white;
+    border: 2px solid #ff5e14;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.footer-input-box button:hover {
+    color: white;
+    background-color: #ff5e14;
+    transform: scale(1.05);
+}
+
+.footer-input-box button:active {
+    transform: scale(0.98);
+}
+
+/* Copyright Line */
+.footer-copyright {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-input-box {
+        flex-direction: row;
+        max-width: 400px;
+    }
+
+    .footer-copyright {
+        position: static;
+        text-align: right;
+    }
+}

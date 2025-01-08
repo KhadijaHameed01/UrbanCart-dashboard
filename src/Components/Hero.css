@@ -1,0 +1,56 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0 0 70px;
+  }
+  
+  .hero-left-side {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .hero-one-side {
+    max-width: 400px;
+  }
+  
+  .para-side-bar {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .heading-side-bar {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .shop-now {
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .hero-right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
