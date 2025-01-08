@@ -5,11 +5,9 @@ import ProjectItem from './ProjectItem';
 export default function LatestCollection() {
   
   const {Products}= useContext(ShopContext);
-  console.log('Products:', Products);
  const [latestProducts,setLatestProducts]=useState([]);
   useEffect(() => {
     setLatestProducts(Products);
-console.log('Latest Products:', latestProducts);
   }, [Products]);
   
   
@@ -23,7 +21,7 @@ console.log('Latest Products:', latestProducts);
       <Title text1={'LATEST'} text2={'COLLECTION'} />
     </div>
     {/* Rendering products */}
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 gap-y-8 my-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 gap-y-8 mb-8 mt-4">
       {latestProducts.map((item, index) => (
         <ProjectItem key={index} id={item._id} name={item.name} price={item.price} image={item.image} sizes={item.sizes} />
       ))}

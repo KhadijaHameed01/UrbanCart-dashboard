@@ -15,7 +15,7 @@ const RelatedProducts = ({category,subCategory}) => {
     };
       setRelated(productsCopy.slice(0,5));
 
-    },[Products])
+    },[Products,category,subCategory])
   return (
     <div className='my-4'>
         <div className='text-center text-3xl py-2'>

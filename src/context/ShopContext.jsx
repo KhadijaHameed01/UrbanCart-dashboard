@@ -107,7 +107,8 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
         getCartCount();
-    }, [cartItem]);
+
+        }, [cartItem]);
 
     const getCartAmount = () => {
         let totalAmount = 0;

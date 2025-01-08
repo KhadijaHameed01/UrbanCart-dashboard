@@ -9,7 +9,6 @@ const ProjectItem = ({ id, image, name, price, sizes }) => {
   const handleAddToWishlist = (e) => {
     e.preventDefault(); // Prevent navigation when button is clicked
     addToWishlist({ id, image, name, price, currency,sizes });
-    console.log('sizes',sizes);
     
   };
 
