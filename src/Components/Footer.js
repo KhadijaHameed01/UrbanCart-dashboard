@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/"><IoLogoInstagram /></a>
           </li>
           <li className="footer-icons">
-            <a href="https://www.X.com/"><BsTwitterX /></a>
+            <a href="https://www.instagram.com/"><BsTwitterX /></a>
           </li>
           <li className="footer-icons">
             <a href="https://www.youtube.com/"><AiOutlineYoutube /></a>

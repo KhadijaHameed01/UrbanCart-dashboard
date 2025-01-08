@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useState } from "react";
+import React, { useEffect, createContext, useState, useCallback } from "react";
 import { Products } from "../assets-urban-gallery/assets";
 import { toast } from "react-toastify";
 
@@ -95,7 +95,7 @@ const ShopContextProvider = (props) => {
         localStorage.setItem("cartItem", JSON.stringify(cartData));
     };
 
-    const getCartCount = () => {
+    const getCartCount = useCallback(() => {
         let totalCount = 0;
         for (const itemId in cartItem) {
             for (const size in cartItem[itemId]) {
@@ -103,12 +103,11 @@ const ShopContextProvider = (props) => {
             }
         }
         setCartCount(totalCount);
-    };
+    },[cartItem]);
 
     useEffect(() => {
         getCartCount();
-
-        }, [cartItem]);
+        }, [getCartCount]);
 
     const getCartAmount = () => {
         let totalAmount = 0;
