@@ -29,6 +29,7 @@ const [sortType, setSortType] = useState('relevant');
   }
   }
 
+ 
   const applyFilter = useCallback(() => {
     if (!Array.isArray(Products) || Products.length === 0) return;
     
@@ -81,7 +82,6 @@ const [sortType, setSortType] = useState('relevant');
     sortProducts();
   }, [sortProducts]);
   
-
   return (
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 pt-10 border-t border-gray-300 w-[100%] ml-3 bg-white mt-2">
         {/* Filters section */}

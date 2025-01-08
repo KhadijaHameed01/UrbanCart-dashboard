@@ -5,6 +5,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPinterestP } from "react-icons/fa6";
 
+
 export default function Footer() {
   return (
     <footer className="footer">
